@@ -18,14 +18,12 @@ $(document).ready( function() {
 
 
 var intervalID = window.setInterval(loopPrice, 15000);
-//
-// var clearTarget = clearInterval(intervalID);
-// setTimeout(clearTarget, 6100);
-window.setTimeout(clearer, 300000);
 
+window.setTimeout(clearer, 300000);
 function clearer() {
 	clearInterval(intervalID);
-	alert("game over!");
+	endGame();
+	alert("game over! You finished with: $" + userCash.toFixed(2));
 }
 
 $('.container').on('click', '.buy-button', function (){
@@ -57,7 +55,7 @@ $('.container').on('click', '.sell-button', function(){
 	} else {
 		$fl.inv--;
 		userCash += $fl.price;
-		$fl.spent -= $fl.avgPrice; 
+		$fl.spent -= $fl.avgPrice;
 		$(this).parent().find('.inventory').text($fl.inv);
 		$('.cash-avail').text(userCash.toFixed(2));
 	}
@@ -102,7 +100,16 @@ function Fruit (name, price, avgPrice, inv, amtSpent) {
 	this.inv = inv,
 	this.spent = amtSpent
 }
-
+function endGame(){
+	var addScore = 0;
+	for (var i = 0; i < fruitBasket.length; ++i){
+		addScore += (fruitBasket[i].inv * fruitBasket[i].price);
+		fruitBasket[i].inv = 0;
+	}
+	userCash += addScore;
+	$('.cash-avail').text(userCash.toFixed(2));
+	$('.inventory').text('0');
+}
 
 
 
