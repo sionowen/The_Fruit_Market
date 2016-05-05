@@ -18,9 +18,17 @@ $(document).ready( function() {
 
 
 var intervalID = window.setInterval(loopPrice, 15000);
-console.log(apple.price);
+//
+// var clearTarget = clearInterval(intervalID);
+// setTimeout(clearTarget, 6100);
+window.setTimeout(clearer, 300000);
 
-$('.container').on('click', 'button', function (){
+function clearer() {
+	clearInterval(intervalID);
+	alert("game over!");
+}
+
+$('.container').on('click', '.buy-button', function (){
 var $fl = fruitBasket[$(this).parent().data('fruit')];
 	if (userCash-$fl.price < 0) {
 	  alert("You're out of money!");
@@ -41,6 +49,20 @@ $fl.avgPrice = $fl.spent / $fl.inv;
 $(this).parent().find('.avg-price').text($fl.avgPrice.toFixed(2));
 console.log($fl);
 }
+});
+$('.container').on('click', '.sell-button', function(){
+	var $fl = fruitBasket[$(this).parent().data('fruit')];
+	if ($fl.inv <= 0) {
+		alert("You're out of " + $fl.name + "!");
+	} else {
+		$fl.inv--;
+		userCash += $fl.price;
+		$fl.spent -= $fl.avgPrice; 
+		$(this).parent().find('.inventory').text($fl.inv);
+		$('.cash-avail').text(userCash.toFixed(2));
+	}
+
+
 });
 
 //market fluctuation
