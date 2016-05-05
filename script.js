@@ -16,26 +16,33 @@ $(document).ready( function() {
 	$('.orange').data('fruit', 2);
 	$('.pear').data('fruit', 3);
 
+/*testing windowTimers
+var intervalID = window.setInterval(returnRandom, 1500);*/
 
 
 $('.container').on('click', 'button', function (){
+
 var $fl = fruitBasket[$(this).parent().data('fruit')];
+//increments inventory in object
+$fl.inv += 1;
+console.log($fl);
+//finds inventory, increments on DOM
+$(this).parent().find('.inventory').text($fl.inv);
+//depletes userCash
+userCash -= $fl.price;
+$('header').find('.cash-avail').text(userCash);
+if (userCash == 0) {
+  alert("You're out of money!");
+}
 
-$fl.inv +=1;
-console.log('fl', $fl);
-console.log('pear', pear);
-
-$(this).parent().find('.inventory').text();
 });
 
-
-
-
-
-
-
-
-
+//testing windowTimers
+function returnRandom () {
+  var random = randomNumber(1, 50);
+  console.log(random);
+}
+//useful functions
 function randomNumber(min, max) {
 	return Math.floor(Math.random() * (1 + max - min) + min);
 }
@@ -44,5 +51,11 @@ function Fruit (name, price, avgPrice, inv) {
 	this.price = price,
 	this.avgPrice = avgPrice,
 	this.inv = inv
-};
+}
+
+/*function changePrice(){
+  set variable to randomNumber (1, 50);
+  randomly assign price + or - the variable;*/
+
+
 });
