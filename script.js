@@ -16,8 +16,8 @@ $(document).ready( function() {
 	$('.orange').data('fruit', 2);
 	$('.pear').data('fruit', 3);
 
-/*testing windowTimers
-var intervalID = window.setInterval(returnRandom, 1500);*/
+
+var intervalID = window.setInterval(returnRandom, 1500);
 
 
 $('.container').on('click', 'button', function (){
@@ -39,7 +39,7 @@ if (userCash == 0) {
 
 //testing windowTimers
 function returnRandom () {
-  var random = randomNumber(1, 50);
+  var random = randomNumber(-50, 50);
   console.log(random);
 }
 //useful functions
