@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Fruit Market</title>
-		<meta name="description" content="Webpage">
-		<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-		crossorigin="anonymous">
-		<!-- <link href="bootstrap.min.css" rel="stylesheet" > -->
-		<link href="stylesheet.css" rel="stylesheet">
-		<script src="jquery.min.js"></script>
-		<script src="script.js"></script>
-	</head>
 
-	<body>
+<head>
+	<meta charset="utf-8">
+	<title>Fruit Market</title>
+	<meta name="description" content="Webpage">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- <link href="bootstrap.min.css" rel="stylesheet" > -->
+	<link href="stylesheet.css" rel="stylesheet">
+	<script src="jquery.min.js"></script>
+	<script src="script.js"></script>
+</head>
+
+<body>
 	<header class="jumbotron text-center">
 		<h1>Total Available Cash: <h1 class="cash-avail"></h1></h1>
 	</header>
+	<div class="row">
+		<h2 class="col-md-2 col-md-offset-2">Instructions: </h1>
+		<p class="col-md-6">
+			This is a game where the goal is to make a much money as you can through the buying and selling of Fruit at a Fruit stand.
+			The prices of the fruit change randomely every 15 seconds and you have 5 minutes to make as many beneficial trades as you can.
+		</p>
+
+	</div>
 	<div class="container">
 		<div class="row">
-		<div class="col-md-2 apple">
-		<img src="images/apple-babies.jpg"/>
-		<button class="buy-button">Buy</button>
-		<button class="sell-button">Sell</button>
-		<p>
-			<h3>Price: <h3 class="price">2</h3></h3>
-		</p>
-		<h3>Average Price:<h3 class="avg-price">0</h3></h3>
+			<div class="col-md-2  apple">
+				<img src="images/apple-babies.jpg" />
+				<button class="buy-button">Buy</button>
+				<button class="sell-button">Sell</button>
+				<p>
+					<h3>Price: <h3 class="price">2</h3></h3>
+				</p>
+				<h3>Average Price:<h3 class="avg-price">0</h3></h3>
 
-			<h3>Inventory:</h3>
-			<p class="inventory">
-			0
-		</p>
-	</div>
-	<div class="col-md-2 banana">
-		<img src="images/bananas1.jpeg"/>
-		<button class="buy-button">Buy</button>
-		<button class="sell-button">Sell</button>
-		<p>
-			<h3>Price: <h3 class="price">2</h3></h3>
-		</p>
-		<h3>Average Price:<h3 class="avg-price">0</h3></h3>
+				<h3>Inventory:</h3>
+				<p class="inventory">
+					0
+				</p>
+			</div>
+			<div class="col-md-2 col-md-offset-1 banana">
+				<img src="images/bananas1.jpeg" />
+				<button class="buy-button">Buy</button>
+				<button class="sell-button">Sell</button>
+				<p>
+					<h3>Price: <h3 class="price">2</h3></h3>
+				</p>
+				<h3>Average Price:<h3 class="avg-price">0</h3></h3>
 
-			<h3>Inventory:</h3>
-			<p class="inventory">
-		0
-		</p>
-	</div>
-		<!-- <div class="col-md-2 grape">
+				<h3>Inventory:</h3>
+				<p class="inventory">
+					0
+				</p>
+			</div>
+			<!-- <div class="col-md-2 col-md-offset-1 grape">
 		<img src="images/grapes.jpeg"/>
 		<button class="buy-button">Buy</button>
 		<button class="sell-button">Sell</button>
@@ -62,37 +68,41 @@
 			0
 		</p>
 	</div> -->
-		<div class="col-md-2 orange">
-		<img src="images/orange.jpeg"/>
-		<button class="buy-button">Buy</button>
-		<button class="sell-button">Sell</button>
-		<p>
-			<h3>Price: <h3 class="price">2</h3></h3>
-		</p>
-		<h3>Average Price:<h3 class="avg-price">0</h3></h3>
+			<div class="col-md-2 col-md-offset-1 orange">
+				<img src="images/orange.jpeg" />
+				<button class="buy-button">Buy</button>
+				<button class="sell-button">Sell</button>
+				<p>
+					<h3>Price: <h3 class="price">2</h3></h3>
+				</p>
+				<h3>Average Price:<h3 class="avg-price">0</h3></h3>
 
-			<h3>Inventory:</h3>
-			<p class="inventory">
-			0
-		</p>
+				<h3>Inventory:</h3>
+				<p class="inventory">
+					0
+				</p>
+			</div>
+			<div class="col-md-2 col-md-offset-1 pear">
+				<img src="images/pears.jpeg" />
+				<button class="buy-button">Buy</button>
+				<button class="sell-button">Sell</button>
+				<p>
+					<h3>Price: <h3 class="price">2</h3></h3>
+				</p>
+				<h3>Average Price:<h3 class="avg-price">0</h3></h3>
+
+				<h3>Inventory:</h3>
+				<p class="inventory">
+					0
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<h2 class="col-md-3 col-md-offset-3">Time Remaining: <h1 class="col-md-2 timer"></h1></h1>
+		</div>
 	</div>
-	<div class="col-md-2 pear">
-	<img src="images/pears.jpeg"/>
-	<button class="buy-button">Buy</button>
-	<button class="sell-button">Sell</button>
-	<p>
-		<h3>Price: <h3 class="price">2</h3></h3>
-	</p>
-	<h3>Average Price:<h3 class="avg-price">0</h3></h3>
-
-		<h3>Inventory:</h3>
-		<p class="inventory">
-		0
-	</p>
-</div>
-	</div>
-</div>
 
 
-	</body>
+</body>
+
 </html>
